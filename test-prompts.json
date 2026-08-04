@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "prompt": "用 bid-doc-html 处理这个投标参数文件，生成产品说明书",
+    "context": "用户提供一个 .docx 文件路径，期望技能自动提取图文并生成画册风 HTML",
+    "expected": "运行 make_doc.py 脚本，输出 index.html（base64 内嵌图片），用 present_files 交付，说明可用功能（标注/调整/编辑/主题/PDF）"
+  },
+  {
+    "id": 2,
+    "prompt": "我有一个投标项目，参数我直接在对话里发给你，图片放在 D:/bid-images/ 文件夹里按编号命名了，帮我做成说明书",
+    "context": "用户没有 docx，而是直接在对话中提供参数+图片文件夹路径",
+    "expected": "应使用简报模板引导用户结构化提交参数，读取图片文件夹，基于 template.html 手动组装或引导用户先用 docx 整理再走脚本"
+  },
+  {
+    "id": 3,
+    "prompt": "生成后我想修改几处文字、加几个标注、换个主题颜色，怎么做？",
+    "context": "用户已拿到生成的 index.html，想要后编辑",
+    "expected": "说明 HTML 自带的标注/调整/编辑三大模式用法，或引导打开 editor.html 全功能编辑器"
+  }
+]
